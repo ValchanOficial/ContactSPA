@@ -23,7 +23,7 @@ const Contact = ({avatar, name, phone, country, admissionDate, company, departme
       </span>
 
       <span className="contact__data" data-testid="contact-admissionDate">
-        {formatDate(admissionDate)}
+        {admissionDate? formatDate(admissionDate): ""}
       </span>
 
       <span className="contact__data" data-testid="contact-company">

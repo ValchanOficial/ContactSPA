@@ -15,17 +15,18 @@ const App = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			const value = await Api.getContacts();
-			setContacts(value);
+      await setContacts(value);
+      await setList(contacts);
 		}
 		fetchData();
-  }, []);
+  }, [contacts]);
 
   return (
     <>
       <Topbar/>
       <Filters
         contacts={contacts}
-        handleSetList={setList}
+        setList={setList}
       />
       <Contacts contacts={list}/>
     </>

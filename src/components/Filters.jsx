@@ -1,14 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-const Filters = ({contacts, handleSetList}) => {
+const Filters = ({contacts, setList}) => {
 	const [context, setContext] = useState('');
-
-	useEffect(() => {
-		const callArray = async () => {
-			await handleSetList(contacts);
-		}
-		callArray();
-	}, [contacts, handleSetList]);
 
 	const filterByName = (name, list) => list.filter(contact => contact.name.toLowerCase().includes(name.toLowerCase()));
 
@@ -18,7 +11,7 @@ const Filters = ({contacts, handleSetList}) => {
 
 	const handleClick = (textContent) => setContext(context !== textContent ? textContent: '');
 
-	const handleTyping = (value) => handleSetList(filterByName(value, contacts));
+	const handleTyping = (value) => setList(filterByName(value, contacts));
 
 	const handleSortList = (e, textContent) => {
 		const { classList } = e.target;
@@ -27,26 +20,26 @@ const Filters = ({contacts, handleSetList}) => {
 		switch (textContent) {
 			case 'name':
 				list = sortByTarget(contacts, 'name').map(el => el);
-				handleSetList(reverseList(classList, list));		
+				setList(reverseList(classList, list));		
 				break;
 			case 'country':
 				list = sortByTarget(contacts, 'country').map(el => el);
-				handleSetList(reverseList(classList, list));		
+				setList(reverseList(classList, list));		
 				break;
 			case 'company':
 				list = sortByTarget(contacts, 'company').map(el => el);
-				handleSetList(reverseList(classList, list));
+				setList(reverseList(classList, list));
 				break;
 			case 'date':
 				list = sortByDate(contacts).map(el => el);
-				handleSetList(reverseList(classList, list));
+				setList(reverseList(classList, list));
 				break;
 			case 'department':
 				list = sortByTarget(contacts, 'department').map(el => el);
-				handleSetList(reverseList(classList, list));
+				setList(reverseList(classList, list));
 				break;
 			default:
-				handleSetList(contacts);
+				setList(contacts);
 				break;
 		}
 	};
