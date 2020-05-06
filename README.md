@@ -1,5 +1,7 @@
 # Codenation - SPA: App de Contatos
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/55853d55-b16f-44ff-9bc6-d6ec1bec19cb/deploy-status)](https://app.netlify.com/sites/valchan-contact-spa/deploys)
+
 ## Objetivo:
 O desafio é desenvolver um *SPA (Single Page Application)* de uma lista de contatos em **React** com as seguintes funcionalidades:
 
