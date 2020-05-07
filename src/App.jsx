@@ -12,14 +12,15 @@ const App = () => {
 	const [contacts, setContacts] = useState([]);
   const [list, setList] = useState([]);
   
-	useEffect(() => {
-		const fetchData = async () => {
+  useEffect(() => {
+    const fetchData = async () => {
       const value = await Api.getContacts();
       await setContacts(value);
       await setList(value);
     }
     fetchData();
   }, []);
+  
   return (
     <>
       <Topbar/>

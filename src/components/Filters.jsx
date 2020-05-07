@@ -13,37 +13,17 @@ const Filters = ({contacts, setList}) => {
 
 	const handleTyping = (value) => setList(filterByName(value, contacts));
 
-	const handleSortList = (e, textContent) => {
-		const { classList } = e.target;
-		let list = [];
-		
-		switch (textContent) {
-			case 'name':
-				list = sortByTarget(contacts, 'name').map(el => el);
-				setList(reverseList(classList, list));		
-				break;
-			case 'country':
-				list = sortByTarget(contacts, 'country').map(el => el);
-				setList(reverseList(classList, list));		
-				break;
-			case 'company':
-				list = sortByTarget(contacts, 'company').map(el => el);
-				setList(reverseList(classList, list));
-				break;
-			case 'date':
-				list = sortByDate(contacts).map(el => el);
-				setList(reverseList(classList, list));
-				break;
-			case 'department':
-				list = sortByTarget(contacts, 'department').map(el => el);
-				setList(reverseList(classList, list));
-				break;
-			default:
-				setList(contacts);
-				break;
-		}
-	};
+	const sortList = (targetContext) => ({
+		"name": sortByTarget(contacts, 'name').map(el => el),
+		"country": sortByTarget(contacts, 'country').map(el => el),
+		"company": sortByTarget(contacts, 'company').map(el => el),
+		"department": sortByTarget(contacts, 'department').map(el => el),
+		"date": sortByDate(contacts).map(el => el),
+		"": setList(contacts)
+	})[targetContext];
 
+	const handleSortList = ({target: {classList}}, targetContext) => setList(reverseList(classList, sortList(targetContext)));
+	
 	const reverseList = (classList, list) => !classList.contains('is-selected') ? list : list.reverse();
 
 	return (
