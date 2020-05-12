@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact = ({avatar, name, phone, country, admissionDate, company, department}) => {
 
-  const formatDate = (date) => new Intl.DateTimeFormat('pt-BR').format(new Date(date));
+  const formatDate = (date) => new Date(date).toLocaleDateString('pt-BR');
 
   return (
     <article className="contact" data-testid="contact">

@@ -18,6 +18,13 @@ GET: *https://5e82ac6c78337f00160ae496.mockapi.io/api/v1/contacts*
 - Modularize os componentes na pasta components.
 - Atualize os arquivos de componentes carregando corretamente seus estilos e suas marcações JSX.
 
+### Requisitos - Parte 2:
+
+- Crie os *estados* do SPA.
+- Consuma a *API de contatos* no *ciclo de vida correto* do componente.
+- Implemente a **busca** para filtrar os contatos em tempo real.
+- Implemente os filtros de ordenação por *Nome*, *País*, *Empresa*, *Departamento* e *Data de Admissão*.
+
 ### Iniciar o projeto:
 
 - Instale as dependências do projeto com o comando *yarn install* ou *npm install*.

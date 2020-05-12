@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 junit.xml
-
+/src/__tests__/__snapshots__
 # testing
 /coverage
 

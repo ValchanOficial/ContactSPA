@@ -30,7 +30,10 @@ const Filters = ({contacts, setList}) => {
 		<div className="container" data-testid="filters">
 			<section className="filters">
 				<div className="filters__search">
-					<input type="text" className="filters__search__input" placeholder="Pesquisar" onChange={e => handleTyping(e.target.value)}/>
+					<input type="text" className="filters__search__input" placeholder="Pesquisar" 
+						onChange={e => handleTyping(e.target.value)}
+						onPaste={e => handleTyping(e.target.value)}
+					/>
 					<button className="filters__search__icon">
 					<i className="fa fa-search"/>
 					</button>
