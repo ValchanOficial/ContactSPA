@@ -1,5 +1,6 @@
 # Codenation - SPA: App de Contatos
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d78f4080beab4d20ae127991f7f890c1)](https://app.codacy.com/manual/valeria_padilha/ContactSPA?utm_source=github.com&utm_medium=referral&utm_content=ValchanOficial/ContactSPA&utm_campaign=Badge_Grade_Dashboard)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/55853d55-b16f-44ff-9bc6-d6ec1bec19cb/deploy-status)](https://app.netlify.com/sites/valchan-contact-spa/deploys)
 
 ## Objetivo
